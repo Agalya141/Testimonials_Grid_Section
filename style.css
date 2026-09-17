@@ -85,3 +85,39 @@ body {
     background-color: var(--Dark-blue);
     color: var(--White)
 }
+
+@media(min-width:32rem){
+    body{
+        display:grid;
+    }
+    .card{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows:1fr 1fr;
+        width:fit-content;
+        height:20rem;
+    }
+    .testimonial_card{
+        min-width:25rem;
+    }
+    .first_card{
+        grid-column:1/2;
+        grid-row:1;
+    }
+    .second_card{
+        grid-column:3;
+        grid-row:1;
+    }
+    .third_card{
+        grid-column:4;
+        grid-row:1/2;
+    }
+    .fourth_card{
+        grid-column:1;
+        grid-row:2;
+    }
+    .fifth_card{
+        grid-column:2/3;
+        grid-row:2;
+}
+}
