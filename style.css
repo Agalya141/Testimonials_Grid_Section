@@ -29,8 +29,10 @@ body {
     justify-content: center;
     min-height: 100vh;
     flex-direction: column;
-    font-family:"Barlow Semi Condensed",sans-serif;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: var(--Grey-100);
 }
+
 .card {
     max-width: 23rem;
     width: 100%;
@@ -38,7 +40,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .testimonial-card {
@@ -49,49 +51,58 @@ body {
     flex-direction: column;
     padding: 1.75rem;
     border-radius: 0.5rem;
-    width:100%;
-    line-height:1.2;
-    box-shadow: 0 0.625rem 1.25rem -0.3125rem rgba(0, 0, 0, 0.08);
+    width: 100%;
+    line-height: 1.2;
+    box-shadow: 0 0.625rem 1.25rem -0.3125rem rgba(0, 0, 0, 0.25);
 }
 
-.testimonial-highlight{
-    font-size:1.25rem;
-    font-weight:600;
-    line-height:1.2;
+.testimonial-highlight {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
-.testimonial-quote{
-    font-size:0.8125rem;    
-    font-weight:500;
+
+.testimonial-quote {
+    font-size: 0.8125rem;
+    font-weight: 500;
     line-height: 1.375;
-    opacity:0.7;
+    opacity: 0.7;
 }
+
 .testimonial-author {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     gap: 1.5rem;
-    width:100%;
+    width: 100%;
 }
-.author-name{
-    font-size:0.8125rem;
-    font-weight:600;
+
+.author-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
 }
-.author-badge{
-    font-size:0.6875rem;
-    font-weight:500;
-    opacity:0.5;
+
+.author-badge {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    opacity: 0.5;
 }
 
 .author-avatar {
-    width:2rem;
-    height:2rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
 }
+
 
 .first_card {
     background-color: var(--Purple-500);
     color: var(--White)
+}
+
+.first_card .author-avatar {
+    border: 2px solid var(--Purple-300)
 }
 
 .second_card {
@@ -99,10 +110,22 @@ body {
     color: var(--White)
 }
 
+
 .third_card,
 .fifth_card {
     background-color: var(--White);
-    color: var(--Grey-400)
+    color: var(--Dark-blue)
+}
+
+.third_card .author-badge,
+.fifth_card .author-badge {
+    color: var(--Grey-400);
+}
+
+.third_card .testimonial-quote,
+.fifth_card .testimonial-quote {
+    color: var(--Grey-500);
+    /* Soft gray text for the main body copy */
 }
 
 .fourth_card {
@@ -110,37 +133,62 @@ body {
     color: var(--White)
 }
 
-/* @media(min-width:32rem){
-    body{
-        display:grid;
-    }
-    .card{
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows:1fr 1fr;
-        height:20rem;
-    }
-    .testimonial_card{
-        min-width:25rem;
-    }
-    .first_card{
-        grid-column:1/2;
-        grid-row:1;
-    }
-    .second_card{
-        grid-column:3;
-        grid-row:1;
-    }
-    .third_card{
-        grid-column:4;
-        grid-row:1/2;
-    }
-    .fourth_card{
-        grid-column:1;
-        grid-row:2;
-    }
-    .fifth_card{
-        grid-column:2/3;
-        grid-row:2;
+.fourth_card .author-avatar {
+    border: 0.1rem solid var(--Purple-300)
 }
-} */
+
+.fourth_card .author-badge,
+.fourth_card .testimonial-quote {
+    color: var(--Grey-200)
+}
+
+footer {
+    margin-top: 5rem;
+}
+
+@media(min-width:32rem) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        justify-content: center;
+        align-items: stretch;
+        max-width: 69.5rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .first_card {
+        grid-column: 1/3;
+        grid-row: 1;
+        background-image: url(bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top right 10%;
+    }
+
+    .second_card {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .third_card {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .fourth_card {
+        grid-column: 2/4;
+        grid-row: 2;
+    }
+
+    .fifth_card {
+        grid-column: 4;
+        grid-row: 1/3;
+    }
+}
